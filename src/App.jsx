@@ -11,11 +11,11 @@ function App() {
 
   // 🎯 GIF stages (fixed reliable ones)
   const gifs = [
-    "src/assets/gifs/bubu-holding-and-squeezing-a-heart-bubu-dudu-love.gif",
-    "src/assets/gifs/Love-You-Cartoon-Gif-Love-Gif-Images.gif",
-    "src/assets/gifs/bubu-dudu.gif",
-    "src/assets/gifs/dudu-sad.gif",
-    "src/assets/gifs/sad_eyes.gif",
+    "/gifs/bubu-holding-and-squeezing-a-heart-bubu-dudu-love.gif",
+    "/gifs/Love-You-Cartoon-Gif-Love-Gif-Images.gif",
+    "/gifs/bubu-dudu.gif",
+    "/gifs/dudu-sad.gif",
+    "/gifs/sad_eyes.gif",
   ];
 
   const noTexts = [
@@ -132,7 +132,7 @@ function App() {
         className="gif"
         src={
           accepted
-            ? "src/assets/gifs/Final.gif"
+            ? "/gifs/Final.gif"
             : gifs[Math.min(noCount, gifs.length - 1)]
         }
         alt="gif"
@@ -152,8 +152,11 @@ function App() {
             className="yes"
             onClick={handleYes}
             style={{
-              fontSize: `${18 + noCount * 5}px`,
-              padding: `${10 + noCount * 3}px ${18 + noCount * 5}px`,
+              fontSize: `${Math.min(18 + noCount * 4, 32)}px`,
+              padding: `${Math.min(10 + noCount * 2, 18)}px ${Math.min(
+                18 + noCount * 4,
+                40
+              )}px`,
             }}
           >
             💖 Yes 💖
